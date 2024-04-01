@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: ./src/main/frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"  # React 개발 서버 포트
+    depends_on:
+      - backend  # 백엔드 서비스에 의존
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://database:3306/board?useSSL=false&allowPublicKeyRetrieval=true
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: 1234
+    ports:
+      - "8080:8080"  # Spring Boot 애플리케이션 포트
+    depends_on:
+      - database
+
+  database:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: board
+    ports:
+      - "3002:3306"
+    volumes:
+      - ./mariadb/data:/var/lib/mysql
+      - ./mariadb/conf.d:/etc/mysql/conf.d
+      - ./mariadb/db/initdb.d:/docker-entrypoint-initdb.d

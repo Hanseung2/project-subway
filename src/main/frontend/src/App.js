@@ -1,20 +1,31 @@
-import React, {useEffect, useState} from 'react';
-import axios from 'axios';
+import React, { Suspense, lazy } from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Main from './components/section/Main';
 
-function App() {
-  const [hello, setHello] = useState('')
 
-  useEffect(() => {
-    axios.get('/api/hello')
-        .then(response => setHello(response.data))
-        .catch(error => console.log(error))
-  }, []);
+const Login = lazy(() => import('./pages/Login'));
+const Nav = lazy(() => import('./pages/Nav'));
+const Developer = lazy(() => import('./pages/Developer'));
+const Tsteam = lazy(() => import('./pages/Tsteam'));
+const Map = lazy(() => import('./pages/Map'));
+const Signup = lazy(() => import('./pages/Signup'));
 
-  return (
-      <div>
-        백엔드에서 가져온 데이터입니다 : {hello}
-      </div>
-  );
+
+const App = () => {
+    return (
+        <BrowserRouter>
+            <Suspense fallback={<Main />}>
+                <Routes>
+                    <Route path='/' element={<Login />} />
+                    <Route path="/nav" element={<Nav />} />
+                    <Route path="/developer" element={<Developer />} />
+                    <Route path='/tsteam' element={<Tsteam />} />
+                    <Route path='/map' element={<Map />} />
+                    <Route path='/signup' element={<Signup />} />
+                </Routes>
+            </Suspense>
+        </BrowserRouter>
+    );
 }
 
 export default App;
