@@ -5,8 +5,9 @@ const Logo = ({ toggleMenu }) => {
     return (
         <h1 className='header__logo'>
             <Link to='/'>
-                <em aria-hidden='true' onClick={toggleMenu}></em>
-                <span>실시간 서울시<br /> 지하철의 지연<br /> 예측 서비스<br /></span>
+                <span>실시간 서울시</span>
+                <span>지하철의 지연</span>
+                <span>예측 서비스</span>
             </Link>
         </h1>
     )

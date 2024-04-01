@@ -17,22 +17,21 @@ const teamMembers = [
 
 const Tsteam = () => {
     return (
-        <Main 
-            title = "TS팀 구성"
-            description="캡스톤디자인 TS팀입니다">
-            Developerdddddddddddddd
+        <Main title="TS팀 구성" description="캡스톤디자인 TS팀입니다">
             <div className="team-section">
                 {teamMembers.map((member, index) => (
-                <div key={index} className="team-member">
-                <img src={member.photo} alt={member.name} />
-                <h3>{member.name}</h3>
-                <p>{member.role}</p>
-                <p>{member.bio}</p>
+                    <div key={index} className="team-member">
+                        <img src={member.photo} alt={member.name} />
+                        <h3>{member.name}</h3>
+                        <p>{member.role}</p>
+                        <p>{member.bio}</p>
+                        <a href={member.link} className="team-link" target="_blank" rel="noopener noreferrer">더보기</a>
+                    </div>
+                ))}
             </div>
-      ))}
-    </div>
         </Main>
-    )
+    );
 }
 
-export default Tsteam
+export default Tsteam;
+
