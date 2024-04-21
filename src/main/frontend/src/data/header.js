@@ -2,6 +2,8 @@ import { FaRegMap } from "react-icons/fa";
 import { IoNavigateCircleOutline } from "react-icons/io5";
 import { FaPeopleRoof } from "react-icons/fa6";
 import { RiLoginCircleLine } from "react-icons/ri";
+import { MdPersonalInjury } from "react-icons/md";
+import { SiBeijingsubway } from "react-icons/si";
 //
 
 
@@ -14,7 +16,7 @@ export const headerMenus = [
     {
         title: "로그인",
         icon: <RiLoginCircleLine />,
-        src: "/"
+        src: "/login"
     },
     {
         title: "지도",
@@ -26,11 +28,23 @@ export const headerMenus = [
         icon: <IoNavigateCircleOutline />,
         src: "/nav"
     },
-    
+
+    {
+        title: "실시간 도착정보",
+        icon: <SiBeijingsubway />,
+        src: "/live"
+    },
+
     {
         title: "노선별 실시간 혼잡도",
         icon: <FaPeopleRoof />,
-        src: "/developer"
+        src: "/arrival"
+    },
+
+    {
+        title: "지하철 노선도",
+        icon: <MdPersonalInjury />,
+        src: "/routemap"
     },
     
     
@@ -49,22 +63,7 @@ export const searchKeyword = [
 export const snsLink = [
     {
         title: "github",
-        url: "https://github.com/webstoryboy",
+        url: "https://github.com/Capstone-Subway-TS",
         icon: <AiFillGithub />
-    },
-    {
-        title: "youtube",
-        url: "https://www.youtube.com/webstoryboy",
-        icon: <AiFillYoutube />
-    },
-    {
-        title: "codepen",
-        url: "https://codepen.io/webstoryboy",
-        icon: <AiOutlineCodepen />
-    },
-    {
-        title: "instagram",
-        url: "https://www.instagram.com/webstoryboy",
-        icon: <AiOutlineInstagram />
     },
 ]
