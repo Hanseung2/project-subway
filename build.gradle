@@ -35,8 +35,6 @@ tasks.named('test') {
     useJUnitPlatform()
 }
 
-//react + springboot
-
 def frontendDir = "$projectDir/src/main/frontend"
 
 sourceSets {

@@ -1,13 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { FaTrainSubway } from "react-icons/fa6";
 
-const Logo = ({ toggleMenu }) => {
+
+const Logo = () => {
     return (
         <h1 className='header__logo'>
             <Link to='/'>
-                <span>실시간 서울시</span>
-                <span>지하철의 지연</span>
-                <span>예측 서비스</span>
+            <span>TS-Subway Service</span>
             </Link>
         </h1>
     )
